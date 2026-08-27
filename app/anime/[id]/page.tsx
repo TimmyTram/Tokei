@@ -1,6 +1,6 @@
 'use client';
 
-import useFetchAnimeById from "../../hooks/jikan/useFetchAnimeById"
+import useFetchAnimeById from "../../hooks/api/useFetchAnimeById"
 import { useParams } from "next/navigation";
 import Divider from "@/app/components/ui/Divider";
 import AnimeDetails from "@/app/components/anime/AnimeDetails";
@@ -10,7 +10,7 @@ import Synopsis from "@/app/components/shared/Synopsis";
 import BackgroundInfo from "@/app/components/shared/BackgroundInfo";
 import Genre from "@/app/components/shared/Genre";
 import BarGraph from "@/app/components/shared/BarGraph";
-import useFetchAnimeStatisticsById from "@/app/hooks/jikan/useFetchAnimeStatisticsById";
+import useFetchAnimeStatisticsById from "@/app/hooks/api/useFetchAnimeStatisticsById";
 import CommentSection from "@/app/components/comments/CommentSection";
 import AnimeStreaming from "@/app/components/anime/AnimeStreaming";
 

@@ -3,7 +3,7 @@
 import ContentGrid from './ContentGrid';
 import AnimeCard from '../anime/AnimeCard';
 import Pagination from '../pagination/Pagination';
-import useCurrentSeasonResults from '@/app/hooks/jikan/useCurrentSeasonResults';
+import useCurrentSeasonResults from '@/app/hooks/api/useCurrentSeasonResults';
 
 const SeasonalResults = () => {
     const { animeList, currentPage, totalPages, handlePageChange } = useCurrentSeasonResults(10);

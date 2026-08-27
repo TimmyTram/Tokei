@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { API_Provider } from '../../utils/constants'
 
 const useRankResults = <T>(limit: number = 10, mangaToggle: boolean = false) => {
     const router = useRouter();
@@ -11,8 +12,8 @@ const useRankResults = <T>(limit: number = 10, mangaToggle: boolean = false) => 
 
     useEffect(() => {
         const endpoint = mangaToggle
-            ? `https://api.jikan.moe/v4/top/manga?page=${currentPage}&limit=${limit}`
-            : `https://api.jikan.moe/v4/top/anime?page=${currentPage}&limit=${limit}`;
+            ? `${API_Provider}top/manga?page=${currentPage}&limit=${limit}`
+            : `${API_Provider}/top/anime?page=${currentPage}&limit=${limit}`;
         
         fetch(endpoint)
             .then(response => response.json())

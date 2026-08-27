@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MangaData } from '../../types/MangaData';
+import { API_Provider } from '../../utils/constants'
 
 /**
  * This will only run once per render
@@ -15,7 +16,7 @@ const useFetchMangaById = (id: number) => {
         const fetchMangaById = async (id: number) => {
             try {
                 setLoading(true);
-                const res = await fetch(`https://api.jikan.moe/v4/manga/${id}`);
+                const res = await fetch(`${API_Provider}/manga/${id}`);
                 const data = await res.json();
                 if(data.error) throw new Error(data.error);
                 setManga(data.data);

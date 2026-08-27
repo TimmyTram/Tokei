@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { AnimeData } from '../../types/AnimeData';
+import { API_Provider } from '../../utils/constants';
 
 const useCurrentSeasonResults = (limit: number = 10) => {
     const router = useRouter();
@@ -13,7 +14,7 @@ const useCurrentSeasonResults = (limit: number = 10) => {
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        fetch(`https://api.jikan.moe/v4/seasons/now?page=${currentPage}&limit=${limit}`)
+        fetch(`${API_Provider}/seasons/now?page=${currentPage}&limit=${limit}`)
         .then(response => response.json())
         .then(data => {
             setAnimeList(data.data);

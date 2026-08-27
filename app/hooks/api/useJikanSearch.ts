@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { debounce } from 'lodash';
+import { API_Provider } from '../../utils/constants'
 
 const useJikanSearch = <T>(limit: number = 10, mangaToggle: boolean = false) => {
     const router = useRouter();
@@ -22,8 +23,8 @@ const useJikanSearch = <T>(limit: number = 10, mangaToggle: boolean = false) => 
             setIsLoading(true);
 
             const endpoint = mangaToggle
-                ? `https://api.jikan.moe/v4/manga?q=${searchTerm}&page=${currentPage}&limit=${limit}`
-                : `https://api.jikan.moe/v4/anime?q=${searchTerm}&page=${currentPage}&limit=${limit}`;
+                ? `${API_Provider}/manga?q=${searchTerm}&page=${currentPage}&limit=${limit}`
+                : `${API_Provider}/anime?q=${searchTerm}&page=${currentPage}&limit=${limit}`;
 
             fetch(endpoint)
                 .then(response => response.json())

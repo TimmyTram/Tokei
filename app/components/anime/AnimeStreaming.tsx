@@ -1,6 +1,6 @@
 'use client';
 
-import useFetchAnimeStreaming from "@/app/hooks/jikan/useFetchAnimeStreaming";
+import useFetchAnimeStreaming from "@/app/hooks/api/useFetchAnimeStreaming";
 import { useState } from "react";
 
 interface AnimeStreamingProps {

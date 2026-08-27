@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimeStatisticsData } from '../../types/AnimeStatisticsData';
+import { API_Provider } from '../../utils/constants'
 
 const useFetchAnimeStatisticsById = (id: number) => {
     const [animeStatistics, setAnimeStatistics] = useState<AnimeStatisticsData>();
@@ -10,7 +11,7 @@ const useFetchAnimeStatisticsById = (id: number) => {
         const fetchAnimeStatisticsById = async (id: number) => {
             try {
                 setLoading(true);
-                const res = await fetch(`https://api.jikan.moe/v4/anime/${id}/statistics`);
+                const res = await fetch(`${API_Provider}/anime/${id}/statistics`);
                 const data = await res.json();
                 if(data.error) throw new Error(data.error);
                 setAnimeStatistics(data.data);

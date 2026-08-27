@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimeData } from '../../types/AnimeData';
+import { API_Provider } from '../../utils/constants';
 
 /**
  * This will only run once per render
@@ -15,7 +16,7 @@ const useFetchAnimeById = (id: number) => {
         const fetchAnimeById = async (id: number) => {
             try {
                 setLoading(true);
-                const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
+                const res = await fetch(`${API_Provider}/anime/${id}`);
                 const data = await res.json();
                 if(data.error) throw new Error(data.error);
                 setAnime(data.data);
