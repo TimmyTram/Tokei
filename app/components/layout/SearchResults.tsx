@@ -6,7 +6,7 @@ import Pagination from '../pagination/Pagination';
 import Searchbar from '../ui/Searchbar';
 import { useState } from 'react';
 import ButtonToggle from '../ui/ButtonToggle';
-import useJikanSearch from '@/app/hooks/jikan/useJikanSearch';
+import useJikanSearch from '@/app/hooks/api/useJikanSearch';
 import { MangaData } from '@/app/types/MangaData';
 import { AnimeData } from '@/app/types/AnimeData';
 import MangaCard from '../manga/MangaCard';

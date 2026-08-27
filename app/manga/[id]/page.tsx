@@ -1,6 +1,6 @@
 'use client';
 
-import useFetchMangaById from "@/app/hooks/jikan/useFetchMangaById";
+import useFetchMangaById from "@/app/hooks/api/useFetchMangaById";
 import { useParams } from "next/navigation";
 import MangaDetails from "@/app/components/manga/MangaDetails";
 import Divider from "@/app/components/ui/Divider";
@@ -11,7 +11,7 @@ import MangaSerialization from "@/app/components/manga/MangaSerialization";
 import MangaAuthorInfo from "@/app/components/manga/MangaAuthorInfo";
 import Genre from "@/app/components/shared/Genre";
 import MangaThemes from "@/app/components/manga/MangaThemes";
-import useFetchMangaStatisticsById from "@/app/hooks/jikan/useFetchMangaStatisticsById";
+import useFetchMangaStatisticsById from "@/app/hooks/api/useFetchMangaStatisticsById";
 import BarGraph from "@/app/components/shared/BarGraph";
 import CommentSection from "@/app/components/comments/CommentSection";
 

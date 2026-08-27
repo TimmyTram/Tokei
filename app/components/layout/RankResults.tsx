@@ -3,7 +3,7 @@
 import ContentGrid from './ContentGrid';
 import AnimeCard from '../anime/AnimeCard';
 import Pagination from '../pagination/Pagination';
-import useRankResults from '@/app/hooks/jikan/useRankResults';
+import useRankResults from '@/app/hooks/api/useRankResults';
 import { useState } from 'react';
 import ButtonToggle from '../ui/ButtonToggle';
 import MangaCard from '../manga/MangaCard';
